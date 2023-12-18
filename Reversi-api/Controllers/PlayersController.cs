@@ -10,6 +10,7 @@ using Reversi_api.Models;
 
 namespace Reversi_api.Controllers
 {
+    [Route("api/[controller]")]
     public class PlayersController : Controller
     {
         private readonly ReversiContext _context;
