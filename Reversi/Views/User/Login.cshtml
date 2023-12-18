@@ -1,0 +1,47 @@
+﻿@model Reversi.Models.Player
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="d-flex justify-content-center align-items-center flex-column">
+
+    <h1>Inloggen</h1>
+
+    <div class="login-container w-100 shadow p-5 m-3 rounded ">
+        <div class="">
+            <form asp-action="Login" autocomplete="off">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="line-around-text my-4"><span>Or</span></div>
+
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group mt-5">
+                    <input type="submit" value="Login" class="btn btn-primary" />
+                </div>
+            </form>
+            <hr class="my-4"/>
+            <div>
+                <p>Don't have an account? <a href="/register">Sign up!</a></p>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</div>
